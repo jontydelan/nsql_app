@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="/static/images/citi.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Input Example</title>
+</head>
+<style>
+    .centered-image {
+        justify-content: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<body>
+    <p align="center">
+        <img src="/static/images/citi.png" alt="Italian Trulli" >
+    </p>
+    <br>
+    <br>
+    <form id="myForm" align="center" method="post">
+        <label for="userInput" >Enter text:</label>
+        <input type="search" id="searchText" name="searchText" placeholder="Type something...">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <div id="outputBox" align="center">{{Back_end_payload}}</div>
+
+</body>
+</html>
