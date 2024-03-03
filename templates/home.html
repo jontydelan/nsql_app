@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/static/css/style.css">
     <link rel="icon" type="image/x-icon" href="/static/images/citi.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Input Example</title>
-</head>
-<style>
-    .centered-image {
-        justify-content: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
-<body>
-    <p align="center">
-        <img src="/static/images/citi.png" alt="Italian Trulli" >
-    </p>
-    <br>
-    <br>
-    <form id="myForm" align="center" method="post">
-        <label for="userInput" >Enter text:</label>
-        <input type="search" id="searchText" name="searchText" placeholder="Type something...">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    <br>
-    <br>
-    <div id="outputBox" align="center">{{Back_end_payload}}</div>
+    <style>
+        img {
+          padding-top: 20%;
+          position: center;
+          width: 100px;
+          transition: width 1s;
+        }
+        img:hover {
+          width:125px;
+          cursor: pointer;
+        }
+        
+          body {
+          background-color: white;
+        }
+        
+        input[type=search] {
+          border-radius: 20px;
+          width: 80%;
+          background-color: #e4e4e4;
+          padding: 5px 0px;
+          border: none;
+          text-align: center;
+          margin: 15px 0px;
+          outline: none;
+          box-shadow: 3px 3px 3px #555555;
+          transition: 0.5s;
+        }
+  
+        
+        input[type=submit] {
+          border-radius: 7px;
+          background-color: #babcbb;
+          border: 0px;
+          padding: 7px 0px;
+          width: 20%;
+          box-shadow: 3px 3px 3px #555555;
+          transition: 0.5s;
+        }
+        input:hover {
+          box-shadow: 8px 8px 8px #555555;
+          cursor: pointer;
+        }
+      </style>
+  </head>
+  <body>
+      <p align="center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Citi.svg/450px-Citi.svg.png" alt="Italian Trulli" >
+      </p>
+      <br>
+      <br>
+      <form id="myForm" align="center" method="post">
+          <input type="search" id="searchText" name="searchText" placeholder="Search">
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+      <br>
+      <br>
+      <div id="outputBox" align="center">{{Back_end_payload}}</div>
+  
+  </body>
+  </html>
 
-</body>
-</html>
