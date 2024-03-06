@@ -8,7 +8,7 @@
     <title>Text Input Example</title>
     <style>
         img {
-          padding-top: 20%;
+          padding-top: 5%;
           position: center;
           width: 100px;
           transition: width 1s;
@@ -25,29 +25,36 @@
         input[type=search] {
           border-radius: 20px;
           width: 80%;
+          height: 40%;
           background-color: #e4e4e4;
           padding: 5px 0px;
           border: none;
           text-align: center;
           margin: 15px 0px;
           outline: none;
-          box-shadow: 3px 3px 3px #555555;
+          box-shadow: 3px 3px 3px #4e09f096;
           transition: 0.5s;
         }
   
         
         input[type=submit] {
+          padding-top: 5%;
           border-radius: 7px;
           background-color: #babcbb;
           border: 0px;
           padding: 7px 0px;
           width: 20%;
-          box-shadow: 3px 3px 3px #555555;
+          box-shadow: 3px 3px 3px #4e09f096;
           transition: 0.5s;
         }
         input:hover {
-          box-shadow: 8px 8px 8px #555555;
+          box-shadow: 8px 8px 8px #cdb5f6;
           cursor: pointer;
+        }
+        .outputBox{
+            text-align: center;
+            height: 200px;
+            width: 50%;
         }
       </style>
   </head>
@@ -57,14 +64,28 @@
       </p>
       <br>
       <br>
-      <form id="myForm" align="center" method="post">
-          <input type="search" id="searchText" name="searchText" placeholder="Search">
-          <br>
-          <input type="submit" value="Submit">
+      <form id="myForm" align="center" method="post" autofocus>
+
+        <!-- Getting natural language input from user    -->
+        <input type="search" id="searchText" name="searchText" placeholder="Describe your Query">
+
+        <!-- Model selection -->
+        <label for="model_select">Select a Model:</label>
+        <select id="model_select" name="model_select">
+            {% for c in model_served %}
+                <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+        <br>
+        <input type="submit" value="Submit">
       </form>
       <br>
       <br>
-      <div id="outputBox" align="center">{{Back_end_payload}}</div>
+      <p>
+        <blockquote class="outputBox" align="center" ><i>{{Back_end_payload}}</i></blockquote>
+      </p>
   
   </body>
   </html>
