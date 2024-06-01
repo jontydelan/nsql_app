@@ -1,14 +1,17 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+
 class Llama:
 
-    model_path = r'C:\Users\delan\Model_Binary\nsql-llama-2-7B.sav'
-    model_id ="NumbersStation/nsql-llama-2-7B"
+    model_path = r"C:\Users\delan\Model_Binary\nsql-llama-2-7B.sav"
+    model_id = "NumbersStation/nsql-llama-2-7B"
 
     def __init__(self) -> None:
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
-        self.model = AutoModelForCausalLM.from_pretrained(self.model_path, torch_dtype=torch.bfloat16)
+        self.model = AutoModelForCausalLM.from_pretrained(
+            self.model_path, torch_dtype=torch.bfloat16
+        )
 
     def context() -> str:
         templet = """CREATE TABLE stadium (
@@ -51,7 +54,7 @@ class Llama:
                 SELECT"""
         return templet
 
-    def inference(self,question) -> str:
+    def inference(self, question) -> str:
         #  = "What is the maximum, the average, and the minimum capacity of stadiums"
 
         text = self.context().format(question)

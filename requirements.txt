@@ -1,0 +1,5 @@
+flask
+gunicorn
+vanna
+# transformers
+# torch

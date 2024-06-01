@@ -2,6 +2,12 @@
 
 A flask application with the natural language to sql capability
 
+# How to run
+ 1. On local env:
+        `export FLASK_DEBUG=1`
+        `flask run`
+ 2. On PROD:
+        `to be implemented`
 
 # pages:
 

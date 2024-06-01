@@ -1,4 +1,0 @@
-flask
-vanna
-transformers
-torch
