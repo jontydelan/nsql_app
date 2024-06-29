@@ -3,17 +3,30 @@
 A flask application with the natural language to sql capability on the Chinook Database.
 
 # How to run
+
  1. On local env:
         `export FLASK_DEBUG=1`
         `flask run`
+
  2. On PROD:
         `to be implemented`
 #
 Docker usage:
+
 1. local env:
-   Use `docker-compose up --build` to build the docker container with the aws secrets
-   alternatively, 'docker -p 5000:5000 <docker-image-name>`
+   -  Build docker image:
+         Use `docker-compose up --build` to build the docker container with the aws secrets
+   -  Create Docker Container:
+         `docker -p 5000:5000 <docker-image-name>`
+
+2. Ngrok:
+   -  Using edge with private endpoint:
+      `docker run --net=host -it -e NGROK_AUTHTOKEN=<TOKEN> ngrok/ngrok tunnel --label edge=<edge> 5000`
+   -  Using Venilla ngrok with randome endpoint:
+      `docker run --net=host -it -e NGROK_AUTHTOKEN=<TOKEN> ngrok/ngrok:latest http 5000`
    
+   Generate Token and read more [Here](https://dashboard.ngrok.com/get-started/your-authtoken)
+
 3. Production:
    Using CICD pipeline with github action and AWS ECS.
    
